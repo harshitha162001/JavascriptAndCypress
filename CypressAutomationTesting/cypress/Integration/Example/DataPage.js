@@ -14,6 +14,20 @@ class SearchTextField{
        return "button[type='button']"
     }
 
+    static get searchEditbox(){
+        return "input[type='search']"
+    }
+
+    static entertextfield(locatorname,value){
+        switch(locatorname)
+        {
+            case'productname':
+                cy.enterText(this.searchEditbox,value)
+                 break;
+
+        }
+    }
+
    
 }
 export default SearchTextField

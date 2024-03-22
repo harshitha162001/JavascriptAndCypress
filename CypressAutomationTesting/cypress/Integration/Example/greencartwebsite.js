@@ -26,8 +26,16 @@ When("Search for the product {string} in search Menu", function (searchvalue) {
 
  When("Select a perticuler {string} and perform add to cart function", function (product) {
         cy.CompareText(SearchTextField.SearchProducts,SearchTextField.SearchSpecificproductname,SearchTextField.addToCartButton,product)
-        });    
+        });   
+
+
+
 Then('Validate the product length matches with given value',function()
 {
     cy.get('.products .product').should('be.visible').should('have.length',4)
 })
+
+When("search for the product {string} as {string} from the greencart webpage", function (locatorname, value) {
+   SearchTextField.entertextfield(locatorname,value)
+    });
+
